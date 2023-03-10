@@ -12,7 +12,10 @@ interface ProductApi {
     @GET("/api/episode/{id}")
     suspend fun getProductById(@Path("id") id: Int): Product
 
-    @GET("/api/character/{id}")
-    suspend fun getCharacter(@Path("id") id: Int):Result
+    @GET("/api/character")
+    suspend fun getCharacter():SearchCharacterResponse
+
+    @GET("/api/character/")
+    suspend fun getPage(@Query("page") page: Int):SearchCharacterResponse
 
 }
